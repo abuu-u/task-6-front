@@ -6,8 +6,6 @@ import Divider from '@mui/material/Divider'
 import FormControl from '@mui/material/FormControl'
 import Grid from '@mui/material/Grid'
 import InputLabel from '@mui/material/InputLabel'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
 import MenuItem from '@mui/material/MenuItem'
 import Paper from '@mui/material/Paper'
 import Select from '@mui/material/Select'
@@ -15,9 +13,8 @@ import Slider from '@mui/material/Slider'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import type { NextPage } from 'next'
-import { ChangeEvent, ReactElement } from 'react'
+import { ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { ListChildComponentProps } from 'react-window'
 import { settingsSchema } from '../common/validation-schemas'
 import VirtualizedTable from '../components/virtualized-table'
 import useUsers from '../hooks/use-users'
@@ -28,16 +25,6 @@ const defaultValues = {
   locale: supportedLocales[0],
   seed: 0,
   errorsCount: 0,
-}
-
-const Row: React.ComponentType<
-  ListChildComponentProps & { render: (index: number) => ReactElement }
-> = ({ index, style }) => {
-  return (
-    <ListItem style={style} key={index} component="div" disablePadding>
-      <ListItemText primary={`Item ${index + 1}`} />
-    </ListItem>
-  )
 }
 
 const Home: NextPage = () => {
