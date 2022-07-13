@@ -1,6 +1,6 @@
 import createEmotionServer from '@emotion/server/create-instance'
+import { getInitColorSchemeScript } from '@mui/material'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
-import * as React from 'react'
 import createEmotionCache from '../components/create-emotion-cache'
 import theme from '../components/theme'
 
@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
+          {getInitColorSchemeScript()}
           <Main />
           <NextScript />
         </body>
